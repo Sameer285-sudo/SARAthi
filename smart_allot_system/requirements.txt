@@ -1,0 +1,23 @@
+# Core data science — use already-installed versions (Python 3.13 compatible)
+pandas>=2.2.0
+numpy>=2.0.0
+scipy>=1.13.0
+scikit-learn>=1.5.0
+joblib>=1.4.0
+statsmodels>=0.14.0
+
+# Forecasting — Prophet is optional; system works with Ridge baseline if absent
+# prophet>=1.1.5   # Uncomment only if you have a C++ compiler installed
+
+# API (already installed with main backend)
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+python-multipart>=0.0.20
+pydantic>=2.0.0
+
+# Dashboard
+streamlit>=1.40.0
+plotly>=5.20.0
+
+# Utilities
+openpyxl>=3.1.0

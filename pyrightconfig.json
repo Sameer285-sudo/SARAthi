@@ -1,0 +1,10 @@
+{
+  "pythonVersion": "3.13",
+  "extraPaths": [
+    "services",
+    "smart_allot_system"
+  ],
+  "venvPath": ".",
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none"
+}

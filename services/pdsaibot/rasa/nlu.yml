@@ -1,0 +1,287 @@
+version: "3.1"
+
+nlu:
+
+- intent: greeting
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good afternoon
+    - hi there
+    - greetings
+    - what's up
+    - howdy
+    - namaste
+    - vanakkam
+    - నమస్కారం
+    - నమస్తే
+
+- intent: farewell
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - thanks bye
+    - that will be all
+    - exit
+    - quit
+    - close
+    - thank you goodbye
+    - ok thanks
+
+- intent: help
+  examples: |
+    - help
+    - what can you do
+    - what can you help me with
+    - show me what you can do
+    - list your capabilities
+    - how does this work
+    - what is this system
+    - guide me
+    - I need assistance
+    - what services do you offer
+
+- intent: stock_check
+  examples: |
+    - show stock levels in [Guntur](location)
+    - what is the current stock in [Krishna](location) warehouse
+    - how much [rice](commodity) is available in [Nandyal](location)
+    - check stock status for [wheat](commodity)
+    - show me inventory levels
+    - what stock do we have
+    - check current stock
+    - stock update for [Kurnool](location)
+    - how much [sugar](commodity) is left
+    - available stock in [Palnadu](location)
+    - inventory status for [wheat](commodity) in [Guntur](location)
+    - show stock for [fortified rice](commodity)
+    - what is the stock level
+    - stock report
+    - current inventory
+    - check warehouse stock
+    - how many bags are available
+    - is [rice](commodity) available at the shop
+    - stock shortage in [Vijayawada](location)
+    - warehouse inventory for [Kurnool](location)
+    - what commodities are in stock
+
+- intent: entitlement_query
+  examples: |
+    - check my ration entitlement
+    - what is my monthly ration
+    - how much am I entitled to
+    - what do I get per month
+    - what is my ration allocation
+    - how many kilograms of rice do I get
+    - what is the monthly entitlement for my family
+    - can you check my beneficiary details
+    - show my ration card details
+    - what is my family's quota
+    - how much wheat am I eligible for
+    - tell me my entitlement
+    - ration card entitlement check
+    - what are the benefits under PDS
+    - verify my beneficiary ID
+    - check entitlement for my card
+
+- intent: anomaly_check
+  examples: |
+    - what anomalies occurred today
+    - show me the latest anomaly alerts
+    - are there any delivery delays
+    - show high severity anomalies
+    - any suspicious transactions
+    - what are the current alerts
+    - show me anomalies in [Guntur](location)
+    - are there any critical alerts
+    - show risk alerts
+    - any irregularities detected
+    - report on anomalies
+    - flag any issues
+    - show delivery problems
+    - any shipment anomalies
+    - what transactions are flagged
+    - show medium severity anomalies
+    - anomaly report for [Kurnool](location)
+    - check for fraud alerts
+    - any stock diversion alerts
+    - show suspicious activity
+    - recent anomaly detections
+
+- intent: demand_prediction
+  examples: |
+    - predict next month demand
+    - what is the forecasted demand for [rice](commodity)
+    - give me demand predictions for [Guntur](location)
+    - show demand forecast for next [3](future_periods) months
+    - forecast demand for [wheat](commodity) in [Krishna](location)
+    - what will demand be in [Nandyal](location)
+    - predict [rice](commodity) consumption
+    - show future demand
+    - demand forecast report
+    - expected demand for next quarter
+    - how much will be needed next month
+    - predict consumption for [Palnadu](location)
+    - give demand outlook
+    - show upcoming demand
+    - what is the predicted demand
+    - forecast for [sugar](commodity)
+    - next month supply planning
+    - predict demand for next [6](future_periods) months in [Guntur](location)
+    - what is the expected consumption of [wheat](commodity)
+
+- intent: allocation_recommendation
+  examples: |
+    - give allocation recommendations
+    - what should be the optimal stock allocation
+    - show recommended allotment for [Guntur](location)
+    - how should I allocate [rice](commodity)
+    - run the allocation optimizer
+    - what is the recommended allotment
+    - allocation plan for [Krishna](location)
+    - optimize stock distribution
+    - show allocation suggestions
+    - best way to allocate stock
+    - recommended distribution for [wheat](commodity)
+    - allocation report
+    - how to distribute supplies
+    - suggest optimal allocation
+    - run LP optimization
+    - allocation for next month
+    - what is the smart allot recommendation
+    - optimal allocation for [Kurnool](location)
+
+- intent: delivery_status
+  examples: |
+    - check delivery status for transaction [TXN-001](transaction_id)
+    - track my delivery
+    - what is the status of shipment [TXN-123](transaction_id)
+    - where is my delivery
+    - delivery update for [TXN-456](transaction_id)
+    - show delivery tracking
+    - is my delivery on time
+    - check shipment status
+    - delivery progress for order [TXN-789](transaction_id)
+    - when will my delivery arrive
+    - show pending deliveries
+    - track shipment [TXN-002](transaction_id)
+    - my delivery is late
+    - check order status
+    - show assigned deliveries
+    - field delivery status
+    - when will wheat arrive at [Guntur](location)
+    - expected delivery date
+    - track the supply truck
+
+- intent: grievance
+  examples: |
+    - I want to file a complaint
+    - my ration has not been received
+    - I want to report a problem
+    - how do I raise a grievance
+    - register a complaint
+    - I have an issue with my ration shop
+    - my ration card is not working
+    - file a grievance
+    - report an issue
+    - I did not receive my monthly ration
+    - FPS is not giving correct quantity
+    - complain about short supply
+    - ration shop is closed
+    - help me file a complaint
+    - lodge a complaint
+    - my beneficiary card is not recognised
+    - there is a problem with my ration
+    - ration not distributed this month
+    - raise a support ticket
+    - I need to report a complaint
+    - the shop owner is not cooperating
+
+- intent: complaint_fraud
+  examples: |
+    - report corruption at FPS
+    - there is fraud at the ration shop
+    - shop owner is demanding extra money
+    - FPS dealer is diverting stock
+    - black market selling of ration goods
+    - the FPS owner is selling to outsiders
+    - corruption at fair price shop
+    - report a fraud case
+    - illegal activity at ration shop
+    - the dealer is taking bribes
+    - stock being sold outside PDS
+    - fraudulent transactions detected
+    - FPS is selling ration on black market
+    - report theft of ration stock
+    - ghost beneficiary fraud
+    - fake beneficiary scam
+    - I suspect the dealer is cheating
+    - ration diverted by shop owner
+    - bribery at the ration shop
+    - corrupt FPS dealer
+
+- intent: general_query
+  examples: |
+    - what is PDS
+    - tell me about the public distribution system
+    - how does the system work
+    - explain the allotment process
+    - what is SMART-ALLOT
+    - tell me about anomaly detection
+    - what data do you have
+    - show summary
+    - system overview
+    - overall status
+    - give me a dashboard summary
+    - what is the overall situation
+    - system health check
+    - status report
+    - tell me about PDS360
+    - how does food grain distribution work
+    - what is the role of FPS
+    - how are allocations decided
+
+- regex: transaction_id
+  examples: |
+    - TXN-\d+
+    - txn[- ]?\d+
+    - transaction\s+\d+
+    - order\s+#?\d+
+
+- regex: future_periods
+  examples: |
+    - \d+\s*months?
+    - next\s+\d+
+    - \d+\s*quarters?
+
+- lookup: location
+  examples: |
+    - Guntur
+    - Krishna
+    - Nandyal
+    - Kurnool
+    - Palnadu
+    - Tirupati
+    - Vijayawada
+    - Visakhapatnam
+    - Kadapa
+    - Anantapur
+    - Eluru
+    - Ongole
+    - Nellore
+    - Srikakulam
+
+- lookup: commodity
+  examples: |
+    - rice
+    - wheat
+    - sugar
+    - fortified rice
+    - dal
+    - kerosene
+    - oil
+    - pulses
+    - salt

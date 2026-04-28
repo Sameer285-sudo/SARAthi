@@ -1,0 +1,78 @@
+version: "3.1"
+
+stories:
+
+- story: greeting and stock check
+  steps:
+    - intent: greeting
+    - action: utter_greeting
+    - intent: stock_check
+      entities:
+        - location: "Guntur"
+    - action: action_stock_check
+
+- story: greeting and demand prediction
+  steps:
+    - intent: greeting
+    - action: utter_greeting
+    - intent: demand_prediction
+    - action: action_demand_prediction
+
+- story: anomaly check flow
+  steps:
+    - intent: anomaly_check
+    - action: action_anomaly_check
+
+- story: allocation recommendation flow
+  steps:
+    - intent: allocation_recommendation
+    - action: action_allocation_recommendation
+
+- story: delivery status flow
+  steps:
+    - intent: delivery_status
+    - action: action_delivery_status
+
+- story: grievance flow
+  steps:
+    - intent: grievance
+    - action: action_grievance
+
+- story: stock check without location
+  steps:
+    - intent: stock_check
+    - action: utter_ask_location
+    - intent: stock_check
+      entities:
+        - location: "Kurnool"
+    - action: action_stock_check
+
+- story: multi-turn stock and anomaly
+  steps:
+    - intent: stock_check
+      entities:
+        - location: "Guntur"
+    - action: action_stock_check
+    - intent: anomaly_check
+      entities:
+        - location: "Guntur"
+    - action: action_anomaly_check
+
+- story: demand then allocation
+  steps:
+    - intent: demand_prediction
+      entities:
+        - commodity: "rice"
+    - action: action_demand_prediction
+    - intent: allocation_recommendation
+    - action: action_allocation_recommendation
+
+- story: fallback to general
+  steps:
+    - intent: general_query
+    - action: action_general_query
+
+- story: farewell flow
+  steps:
+    - intent: farewell
+    - action: utter_farewell

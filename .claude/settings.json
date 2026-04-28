@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"port.*8005\\\\|8005.*port\\\\|call_centre.main\\\\|services/call_centre\")",
+      "Bash(python -c ' *)",
+      "Bash(netstat -ano)",
+      "Bash(awk '{print $5}')",
+      "Bash(xargs -I{} taskkill /PID {} /F)",
+      "Bash(python -c \"import socket; s=socket.socket\\(\\); [s.connect\\(\\('localhost',8005\\)\\),print\\('still up'\\)] if True else None\")",
+      "Bash(taskkill /PID 25956 /F)",
+      "Bash(taskkill /PID 8756 /F)"
+    ]
+  }
+}

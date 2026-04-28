@@ -1,0 +1,39 @@
+{
+  "dataset": {
+    "raw_file": "C:\\Users\\S Sameer\\Desktop\\pds system\\dataset\\clean_transactions.csv",
+    "total_rows": 58080,
+    "long_rows": 58080,
+    "training_rows": 43560,
+    "test_rows": 14520,
+    "districts": 2,
+    "fps_count": 2212,
+    "date_min": "2026-01-01",
+    "date_max": "2026-04-01",
+    "items": [
+      "Atta",
+      "Dal",
+      "Fine Rice",
+      "Jowar",
+      "Raagi",
+      "Sugar"
+    ]
+  },
+  "metrics": {
+    "train_rows": 43560,
+    "test_rows": 14520,
+    "mae": 44.0678,
+    "rmse": 155.0559,
+    "mape_percent": 171.4617,
+    "wape_percent": 3.8668,
+    "best_iteration": 300,
+    "validation_rows": 14520,
+    "demand_band_confusion": {}
+  },
+  "andhra_pradesh": {
+    "districts_forecasted": 2,
+    "item_rows_forecasted": 12,
+    "forecast_month": "2026-05-01",
+    "total_recommended_allotment": 32537327.56
+  },
+  "artifacts_dir": "C:\\Users\\S Sameer\\Desktop\\pds system\\ml\\smart_allot\\artifacts"
+}

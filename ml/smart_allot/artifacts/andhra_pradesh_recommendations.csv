@@ -1,0 +1,13 @@
+forecast_for_month,state_name,district_name,district_code,item_name,forecast_next_month,safety_stock,carryover_stock_proxy,recommended_allotment,volatility_proxy,distributed_qty_lag_1,allocated_qty_lag_1,model_strategy
+2026-05-01,Andhra Pradesh,Annamayya,1,Atta,58233.64,8735.05,0.0,66968.69,17470.1,50177,50177,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Annamayya,1,Dal,450.88,67.63,0.0,518.51,135.26,0,0,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Annamayya,1,Fine Rice,7516187.47,1127428.12,0.0,8643615.59,2254856.24,6542166,6542166,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Annamayya,1,Jowar,126400.86,18960.13,0.0,145360.99,37920.26,118079,118079,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Annamayya,1,Raagi,51441.26,7716.19,0.0,59157.45,15432.38,19334,19334,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Annamayya,1,Sugar,447619.94,67142.99,0.0,514762.93,134285.98,382802,382802,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Atta,104546.54,15681.98,0.0,120228.52,31363.96,67905,67905,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Dal,1298.75,194.81,0.0,1493.56,389.62,0,0,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Fine Rice,18667003.71,2800050.56,0.0,21467054.27,5600101.12,8780672,8780672,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Jowar,177050.78,26557.62,0.0,203608.4,53115.24,44255,44255,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Raagi,48523.19,7278.48,0.0,55801.67,14556.96,12238,12238,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"
+2026-05-01,Andhra Pradesh,Chittoor,2,Sugar,1094571.29,164185.69,0.0,1258756.98,328371.38,529860,529860,"GradientBoosting FPS-level forecast — lag, rolling-mean, and seasonal features"

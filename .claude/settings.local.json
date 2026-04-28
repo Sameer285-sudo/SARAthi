@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"rmdir /s /q \\\\\"c:\\\\\\\\Users\\\\\\\\S Sameer\\\\\\\\Desktop\\\\\\\\pds system\\\\\\\\backend\\\\\"\")",
+      "Read(//c/Users/S Sameer/.claude/projects/c--Users-S-Sameer-Desktop-pds-system/**)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in d.items\\(\\) if k != 'per_district'}, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; print\\(json.dumps\\(json.load\\(sys.stdin\\), indent=2\\)\\)\")"
+    ]
+  }
+}

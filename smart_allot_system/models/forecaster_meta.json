@@ -1,0 +1,10 @@
+{
+  "test_rows": 405,
+  "metrics": {
+    "mae": 158.17,
+    "rmse": 260.84,
+    "mape_pct": 25.88,
+    "wape_pct": 6.18
+  },
+  "trained": true
+}

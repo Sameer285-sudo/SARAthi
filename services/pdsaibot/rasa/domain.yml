@@ -1,0 +1,105 @@
+version: "3.1"
+
+intents:
+  - greeting
+  - farewell
+  - help
+  - stock_check
+  - entitlement_query
+  - anomaly_check
+  - demand_prediction
+  - allocation_recommendation
+  - delivery_status
+  - grievance
+  - complaint_fraud
+  - general_query
+
+entities:
+  - location
+  - commodity
+  - transaction_id
+  - future_periods
+  - date
+  - beneficiary_id
+  - warehouse
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: location
+
+  commodity:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: commodity
+
+  transaction_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: transaction_id
+
+  future_periods:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: future_periods
+
+  user_role:
+    type: categorical
+    values:
+      - admin
+      - field_staff
+      - citizen
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+responses:
+  utter_greeting:
+    - text: "Hello! I'm PDSAI-Bot. I can help with stock levels, demand forecasts, anomaly alerts, and grievances. What would you like to know?"
+
+  utter_farewell:
+    - text: "Goodbye! Feel free to return if you need assistance with PDS operations."
+
+  utter_help:
+    - text: |
+        I can help you with:
+        📦 **Stock Check** — "Show stock levels in Guntur"
+        📈 **Demand Forecast** — "Predict next month demand for rice"
+        ⚡ **Anomaly Alerts** — "What anomalies occurred today?"
+        📊 **Allocation Plan** — "Give allocation recommendations"
+        🚚 **Delivery Status** — "Track delivery TXN-001"
+        📝 **Grievances** — "I want to file a complaint"
+
+  utter_fallback:
+    - text: "I'm not sure I understood that. Could you rephrase? You can ask about stock levels, demand forecasts, anomalies, or file a grievance."
+
+  utter_ask_location:
+    - text: "Which district or location are you asking about?"
+
+  utter_ask_commodity:
+    - text: "Which commodity are you interested in? (rice, wheat, sugar, etc.)"
+
+actions:
+  - action_stock_check
+  - action_entitlement_query
+  - action_anomaly_check
+  - action_demand_prediction
+  - action_allocation_recommendation
+  - action_delivery_status
+  - action_grievance
+  - action_complaint_fraud
+  - action_general_query
+  - action_default_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

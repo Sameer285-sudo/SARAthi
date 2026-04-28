@@ -1,0 +1,22 @@
+# Node
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Python
+**/__pycache__/
+*.pyc
+.venv/
+
+# Local env
+.env
+.env.local
+.env.*.local
+
+# DB / local state
+*.db
+*.db-wal
+*.db-shm
+
+# Logs
+*.log

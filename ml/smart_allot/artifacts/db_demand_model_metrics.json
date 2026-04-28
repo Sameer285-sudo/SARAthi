@@ -1,0 +1,63 @@
+{
+  "trained_at_utc": "2026-04-27T20:36:50.655737Z",
+  "dataset_csv": "..\\dataset\\clean_transactions.csv",
+  "dataset_sha256": "523fd44d0be97f746f452d628fafb68d2dae3341561f409495bc063d75d4af66",
+  "rows_long": 120432,
+  "rows_trainable": 90324,
+  "regression": {
+    "train_mae": 14.82814429742668,
+    "test_mae": 15.426711722502532,
+    "train_rmse": 56.22361607253591,
+    "test_rmse": 66.50027534430384,
+    "test_r2": 0.9989219940188976
+  },
+  "classification_movement": {
+    "labels": [
+      "DOWN",
+      "FLAT",
+      "UP"
+    ],
+    "report": {
+      "DOWN": {
+        "precision": 0.5451348182883939,
+        "recall": 0.8101045296167247,
+        "f1-score": 0.6517168885774351,
+        "support": 1722.0
+      },
+      "FLAT": {
+        "precision": 0.971169686985173,
+        "recall": 0.9178158362989324,
+        "f1-score": 0.9437392795883361,
+        "support": 26976.0
+      },
+      "UP": {
+        "precision": 0.43746958637469585,
+        "recall": 0.6375886524822695,
+        "f1-score": 0.5189033189033189,
+        "support": 1410.0
+      },
+      "accuracy": 0.8985319516407599,
+      "macro avg": {
+        "precision": 0.6512580305494209,
+        "recall": 0.7885030061326422,
+        "f1-score": 0.7047864956896968,
+        "support": 30108.0
+      },
+      "weighted avg": {
+        "precision": 0.9218090789820966,
+        "recall": 0.8985319516407599,
+        "f1-score": 0.9071416556383345,
+        "support": 30108.0
+      }
+    }
+  },
+  "plots": [
+    "confusion_matrix.png",
+    "feature_importance_top20.png",
+    "learning_curve_mae.png",
+    "pr_curve_up.png",
+    "residuals_scatter.png",
+    "roc_curve_up.png",
+    "training_curve_mae.png"
+  ]
+}
