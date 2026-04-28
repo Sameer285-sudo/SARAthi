@@ -4,7 +4,7 @@ Also builds intent-specific suggestions and insights.
 """
 from __future__ import annotations
 
-from models.schemas import ChatResponse
+from pdsaibot.models.schemas import ChatResponse
 
 _SUGGESTIONS: dict[str, list[str]] = {
     "stock_check": [

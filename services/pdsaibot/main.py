@@ -10,6 +10,9 @@ import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+# Keep path setup for running as a standalone script (python main.py).
+# When imported via the unified gateway (services/app.py), we use absolute imports
+# to avoid module name collisions (e.g. `models.schemas` existing in other services).
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -21,10 +24,10 @@ from fastapi.responses import StreamingResponse
 from shared.db import Base, SessionLocal, engine
 from shared.seed import seed_data
 
-from models.schemas import ChatRequest, ChatResponse, GrievanceRequest, GrievanceResponse
-from chatbot.router import process_message
-from chatbot.memory import memory
-from chatbot.langchain_agent import langchain_agent, fetch_stock_data, fetch_anomaly_data
+from pdsaibot.models.schemas import ChatRequest, ChatResponse, GrievanceRequest, GrievanceResponse
+from pdsaibot.chatbot.router import process_message
+from pdsaibot.chatbot.memory import memory
+from pdsaibot.chatbot.langchain_agent import langchain_agent, fetch_stock_data, fetch_anomaly_data
 
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s — %(message)s")

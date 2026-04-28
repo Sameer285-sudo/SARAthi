@@ -17,13 +17,13 @@ from __future__ import annotations
 import logging
 import uuid
 
-from models.schemas import ChatRequest, ChatResponse
+from pdsaibot.models.schemas import ChatRequest, ChatResponse
 from chatbot.memory import memory
 from chatbot.nlu_engine import nlu_engine
 from chatbot.langchain_agent import langchain_agent
 from chatbot.response_builder import build_response
 from chatbot.translator import detect, lang_name_to_code, to_english, from_english, LANG_NAMES
-from utils.rbac import can_access, should_use_langchain, denied_response
+from pdsaibot.utils.rbac import can_access, should_use_langchain, denied_response
 
 log = logging.getLogger(__name__)
 

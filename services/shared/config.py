@@ -9,7 +9,9 @@ class Settings(BaseSettings):
     app_name: str = "PDS360 AI Platform"
 
     # Default: SQLite so the app runs without Docker/PostgreSQL.
-    # Override in .env: DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/pds360
+    # Override in env/.env:
+    #   Local Postgres: DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/pds360
+    #   Render:        DATABASE_URL=postgresql://user:pass@host/db   (auto-normalized to psycopg driver)
     database_url: str = f"sqlite:///{_ROOT / 'pds360.db'}"
 
     smart_allot_artifacts_dir: str = str(_ROOT / "ml" / "smart_allot" / "artifacts")

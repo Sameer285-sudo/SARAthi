@@ -8,8 +8,8 @@ python-multipart>=0.0.20
 # Database
 sqlalchemy>=2.0.0
 
-# PostgreSQL driver (optional — only needed if using PostgreSQL instead of SQLite)
-# psycopg[binary]>=3.1.0
+# PostgreSQL driver (needed for Render Postgres)
+psycopg[binary]>=3.1.0
 
 # ML / Data
 pandas>=2.2.0
