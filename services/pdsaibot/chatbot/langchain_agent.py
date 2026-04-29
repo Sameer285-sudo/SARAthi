@@ -28,10 +28,33 @@ import httpx
 
 log = logging.getLogger(__name__)
 
+def _default_base_url() -> str:
+    """
+    Choose a sensible default base URL for service-to-service calls.
+
+    Local dev (multiple microservices):
+      - Overview:    http://localhost:8001
+      - SMARTAllot:  http://localhost:8002
+      - Anomalies:   http://localhost:8003
+
+    Production (Render unified gateway):
+      - All modules run inside a single Uvicorn process on $PORT.
+        We can call ourselves over loopback without needing the public URL.
+    """
+    port = os.getenv("PORT", "").strip()
+    if port.isdigit():
+        return f"http://127.0.0.1:{port}"
+    return ""
+
+
+_BASE = os.getenv("SERVICE_BASE_URL", "").strip() or _default_base_url()
+
 _SVC = {
-    "overview":   os.getenv("OVERVIEW_URL",    "http://localhost:8001"),
-    "smartallot": os.getenv("SMARTALLOT_URL",  "http://localhost:8002"),
-    "anomaly":    os.getenv("ANOMALY_URL",      "http://localhost:8003"),
+    # If explicit service URLs are provided, use them.
+    # Otherwise, in unified mode fall back to the single base URL.
+    "overview":   os.getenv("OVERVIEW_URL",    _BASE or "http://localhost:8001"),
+    "smartallot": os.getenv("SMARTALLOT_URL",  _BASE or "http://localhost:8002"),
+    "anomaly":    os.getenv("ANOMALY_URL",     _BASE or "http://localhost:8003"),
 }
 
 # Commodity token → normalised ML model label (GradientBoosting CSV)
@@ -500,9 +523,11 @@ class LangChainAgent:
             info = fetch_smartallot_model_info()
             if "error" in info:
                 data = info
+                hint = _SVC["smartallot"]
                 text = (
                     "Demand forecast service is unavailable (SMARTAllot is down or unreachable).\n\n"
-                    "Fix: start services and ensure SMARTAllot is running on `http://localhost:8002`."
+                    f"Fix: ensure SMARTAllot routes are reachable at `{hint}`. "
+                    "If you're running the unified Render service, no separate 8002 service is required."
                 )
             else:
                 if not info.get("db_demand_model_available"):
